@@ -8,4 +8,3 @@ It supports the following features:
   Users can register using a unique email and password.
   Login functionality is secured using JWT (JSON Web Tokens).
 
-_______________________________________________________________________________________________________________________________________________________________________
