@@ -143,6 +143,58 @@ name:"test",
   profile:"optional"
 }
 </code></pre>
+<h2>Authentication with JWT</h2>
+<p>When a user successfully logs in using the /auth/login endpoint, the server responds with a JWT. This token should be included in the header of every subsequent request to secure endpoints (e.g., sending or fetching messages).</p>
+<p>For example, add the following header:
+</p>
+<pre><code>Authorization: Bearer your-jwt-token</code></pre>
+<h2>Architecture</h2>
+<p>The chat application follows a layered architecture:</p>
+<ul>
+    <li><strong>Controller Layer:</strong> Handles HTTP requests and responses.</li>
+    <li><strong>Service Layer:</strong> Contains the business logic and interacts with repositories.</li>
+    <li><strong>Repository Layer:</strong> Manages data persistence using JPA and interacts with the database.</li>
+    <li><strong>DTO (Data Transfer Objects):</strong> Used to transfer data between client and server without exposing internal database models.</li>
+    <li><strong>Component:</strong> Defines Spring-managed reusable classes for business logic or helper utilities.</li>
+    <li><strong>Entity:</strong> Represents database tables in Java code using JPA annotations.</li>
+</ul>
+
+<h2>Database Schema</h2>
+<p>The application uses three tables:</p>
+<ul>
+    <li><strong>Users:</strong>
+        <ul>
+            <li><strong>id:</strong> Auto-generated user ID.</li>
+            <li><strong>name:</strong> name has email.</li>
+            <li><strong>password:</strong> Encrypted user password.</li>
+        </ul>
+    </li>
+    <li><strong>Chat Messages:</strong>
+        <ul>
+            <li><strong>id:</strong> Auto-generated message ID.</li>
+            <li><strong>content:</strong> Text content of the message.</li>
+            <li><strong>sender_id:</strong> ID of the user who sent the message.</li>
+            <li><strong>receiver_id:</strong> ID of the user who received the message (null for public messages).</li>
+            <li><strong>timestamp:</strong> When the message was sent.</li>
+            <li><strong>message_type:</strong> Indicates whether the message is public or private.</li>
+        </ul>
+    </li>
+    <li><strong>User Profiles:</strong>
+        <ul>
+            <li><strong>user_id:</strong> Associated user ID.</li>
+            <li><strong>profile_photo_url:</strong> URL to profile picture.</li>
+            <li><strong>name</strong> name of the user.</li>
+        </ul>
+    </li>
+</ul>
+
+<h2>Security</h2>
+<p>The application uses Spring Security to secure user registration, login, and messaging functionalities:</p>
+<ul>
+    <li>All endpoints, except for <code>/auth/register</code> and <code>/auth/login</code>, are secured and require a valid JWT token.</li>
+    <li>Passwords are stored in an encrypted format using <strong>BCrypt</strong>.</li>
+    <li>JWT tokens are used to authorize users for accessing protected endpoints.</li>
+</ul>
 
 
 
