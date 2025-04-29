@@ -94,11 +94,55 @@ jwt.secret=mysecretkey
     <li><strong>POT</strong> <code>/api/auth/verify-otp</code> - verify otp that are generated on specific email</li>
        <li><strong>POST</strong> <code>/api/user/updateprofile</code> - to set profile it require JWT authenticated token</li>
   <li><strong>GET</strong> <code>/api/user/all</code> - get list of uers.</li>
-    <li><strong>POST</strong> <code>/api/message</code> - get chat history</li>
-      <li><strong>POST</strong> <code>/api/message/private/${currentUserEmail}/${selectedUser.email}</code> - sent private messages</li>
-  
-  
+    <li><strong>GET</strong> <code>/api/message</code> - get chat history</li>
+      <li><strong>GET</strong> <code>/api/message/private/${currentUserEmail}/${selectedUser.email}</code> - Get history of private messages</li>
 </ul>
+<h3>Sample JSON for Registration</h3>
+<pre><code>
+  {
+    "name":"test@gmail.com",
+    "password":"123456"
+}
+</code></pre>
+<h3>Sample JSON for Login</h3>
+<pre><code>
+  {
+    "name":"test@gmail.com",
+    "password":"123456"
+}
+</code></pre>
+<h3>Sample JSON for forget password</h3>
+<pre><code>
+  {
+    "name":"test@gmail.com",
+  
+}
+</code></pre>
+
+<h3>Sample JSON for Verify Password</h3>
+<pre><code>
+{
+    "email":"test@gmail.com",
+    "otp":"252186"
+}
+</code></pre>
+
+
+<h3>Sample JSON for Reset-Password</h3>
+<pre><code>
+{  
+    "email":"test@gmail.com",
+    "otp":"741383",
+  "newPassword": "newSecurePassword"
+}
+</code></pre>
+<h3>Sample JSON for profile</h3>
+<pre><code>
+{  
+name:"test",
+  profile:"optional"
+}
+</code></pre>
 
 
 
