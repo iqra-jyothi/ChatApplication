@@ -63,7 +63,7 @@
         <pre><code>git clone https://github.com/your-username/chat-application.git</code></pre>
     </li>
     <li>Navigate to the project directory:
-        <pre><code>cd chat-app</code></pre>
+        <pre><code>cd practiceprojectformList</code></pre>
     </li>
     <li>Open <strong>src/main/resources/application.properties</strong> and configure your database:
         <pre><code>
