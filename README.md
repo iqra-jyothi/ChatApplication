@@ -1,4 +1,4 @@
-# ChatApplication with springboot,JWt,spring security,websocket
+# ChatApplication with springboot,JWt,spring security and websocket
 <h2>Overview</h2>
 <p>This project is a RESTful web application built using Spring Boot that provides a secure platform for user authentication and real-time messaging.</p>
   <h1>Project Features</h1>
