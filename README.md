@@ -60,7 +60,7 @@
 <h3>Installation and Setup</h3>
 <ol>
     <li>Clone the repository:
-        <pre><code>git clone https://github.com/your-username/chat-application.git</code></pre>
+        <pre><code>git clone https://github.com/iqra-jyothi/ChatApplication.gitt</code></pre>
     </li>
     <li>Navigate to the project directory:
         <pre><code>cd practiceprojectformList</code></pre>
